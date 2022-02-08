@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <title>Join Scouting!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap" rel="stylesheet">
+
+    <style>
+        /************* General Doc Styles ****************/
+        /*
+            a = section 1
+            b = section 2
+            c = section 3
+            d = section 4
+            e = section 5
+            f = section 6
+            g = section 7
+            h = section 8
+         */
+        * { /* Browser Reset */
+            font-family: 'Comfortaa', cursive;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        /******** DEBUG *** toggle -> *
+        div, section {
+            outline: 2px solid red;
+        }/**/
+
+        section {
+            height: 800px;
+        }
+
+        /********** Header **********************/
+        header {
+            padding: 20px;
+            height: 40px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            background: rgb(30,30,30);
+            z-index: 11;
+        }
+        header a {
+            text-decoration: none;
+        }
+        header a h2 {
+            font-size: 35px;
+            color: whitesmoke;
+            display: inline;
+        }
+        header a h2 span {
+            color: rgb(130,130,130);
+        }
+        /*********** Footer *********************/
+        footer {
+            padding: 10px;
+            height: 80px;
+            background: rgb(30,30,30);
+            z-index: 11;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer-img {
+            background-image: url("res/22-222066_w-a-n-d-e-r-e-r.png");
+            background-size: 100%;
+            width: 10%;
+            height: 100%;
+        }
+        footer div {
+            margin: 0 10px;
+        }
+    </style>
+    <style>
+        /*********** Section 1 [a] *****************/
+        section.a{
+            height: 800px;
+        }
+        .a-background {
+            width: 100%;
+            height: 100%;
+            background-image: url("res/IMG_1353.JPG");
+        }
+        div.a {
+            margin: auto;
+        }
+        h1.a {
+            font-size: 300%;
+        }
+
+
+        .a-vert {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .a-flex-me-betch {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 65%;
+            margin: 0 auto;
+        }
+        .a-row-item {
+            flex: 1 1 0;
+            width: 400px;
+            flex-wrap: wrap;
+            margin: 20px;
+            padding: 10px;
+        }
+        .a-flex-info {
+            text-align: left;
+        }
+        .a-flex-info h1 {
+            font-size: 325%;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .a-flex-info p {
+            font-size: 110%;
+            line-height: 1.4em;
+        }
+        .a-flex-form {
+            text-align: right;
+        }
+        .a-flex-form h3 {
+            font-size: 200%;
+            padding-bottom: 20px;
+            margin-right: 10px;
+        }
+        .a-input {
+            padding: 5px 10px;
+            margin: 10px 0;
+        }
+        .a-input label input {
+            height: 40px;
+            width: 70%;
+            text-align: right;
+            font-size: 100%;
+            padding-right: 10px;
+            color: rgb(50,50,50);
+        }
+        .a-hidden-control {
+            visibility: hidden;
+        }
+        .a-submit {
+            margin: 20px 0;
+            padding: 10px;
+        }
+        .a-submit-btn {
+            border-radius: 5px;
+            border: 2px solid whitesmoke;
+            padding: 15px;
+            text-decoration: none;
+        }
+    </style>
+    <style>
+        /************** Section 2 [b] *************/
+        section.b {
+            height: 500px;
+        }
+        div.b {
+            margin: auto;
+        }
+        .b-background {
+            background: rgb(59, 87, 28);
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        .b-vert {
+            width: 95%;
+        }
+        .b-flex-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .b-row-item {
+            width: 200px;
+            flex: 1 1 0;
+            position: relative;
+            z-index: 3;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .b-row-item h1 {
+            position: absolute;
+            font-size: 1000%;
+            font-family: 'Montserrat', sans-serif;
+            right: 25%;
+            top: -75%;
+            color: #808080;
+            z-index: -1;
+        }
+        .b-row-item h2 {
+            text-align: center;
+            font-size: 300%;
+            padding-bottom: 20px;
+        }
+        .b-row-item p {
+            text-align: center;
+            font-size: 150%;
+        }
+    </style>
+    <style>
+        /**************** Section 3 [c] *****************/
+        section.c {
+            height: 400px;
+        }
+        .c {
+            margin: 0;
+            padding: 0;
+        }
+        .c-background {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 0;
+        }
+        .c-flex-row {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: 0;
+            padding: 0;
+        }
+        .c-row-item {
+            width: calc(100%/3);
+        }
+        .c-row-item div {
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+        }
+        .c-img-1 {
+            background-image: url("res/MVIMG_20190712_095320.jpg");
+        }
+        .c-img-2 {
+            background-image: url("res/IMG_0665.JPEG");
+        }
+        .c-img-3 {
+            background-image: url("res/IMG_20180615_130606.jpg");
+        }
+
+        @media only screen and (max-width: 1600px) {
+            section.c { height: 350px; }
+        }
+        @media only screen and (max-width: 1400px) {
+            section.c { height: 300px; }
+        }
+        @media only screen and (max-width: 1200px) {
+            section.c { height: 250px; }
+        }
+        @media only screen and (max-width: 1000px) {
+            section.c { height: 200px; }
+        }
+        @media only screen and (max-width: 800px) {
+            section.c { height: 150px; }
+        }
+    </style>
+    <style>
+        /**************** Section 4 [d] *******************/
+        section.d {
+            height: 800px;
+        }
+        .d-background {
+            background-image: url("res/838E269E-.jpg");
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .d-content {
+            width: 40%;
+            margin: 0 auto;
+            text-justify: newspaper;
+        }
+        .d-content p {
+            line-height: 2em;
+            font-size: 120%;
+        }
+        .d-author {
+            width: 100%;
+            margin: 10px;
+            text-align: right;
+        }
+        .d-author h3 {
+            font-size: 110%;
+            padding-right: 5%
+        }
+        @media only screen and (max-width: 1300px){
+            section.d { height: 700px; }
+        }
+        @media only screen and (max-width: 1200px){
+            section.d { height: 600px; }
+        }
+        @media only screen and (max-width: 1000px){
+            .d-content {
+                width: 60%;
+            }
+        }
+    </style>
+    <style>
+        /************** Section 5 [e] *****************/
+        section.e {
+            height: 350px;
+        }
+        .e-background {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: relative;
+            align-items: center;
+            margin: 0;
+        }
+        .e-info {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 40px;
+            width: 100%;
+            background: rgb(59, 87, 28);
+            text-align: center;
+        }
+        .e-info h3 {
+            margin-top: 10px;
+        }
+        .e-vert {
+            position: absolute;
+            top: 40px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+        }
+        .e-flex-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            height: 100%;
+        }
+        .e-row-item {
+            width: calc(100%/4);
+        }
+        .e-row-item div {
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .e-img-1 {
+            background-image: url("res/scuba-adventure.jpg");
+        }
+        .e-img-2 {
+            background-image: url("res/Baldy_Aspens_Edits_005-2048x1366.jpg");
+        }
+        .e-img-3 {
+            background-image: url("res/GIS-Top-685x4501-610x400.jpg");
+        }
+        .e-img-4 {
+            background-image: url("res/mea-2-300x300.jpg");
+        }
+        .e-card {
+            padding-top: 4%;
+        }
+        .e-card h4 {
+            margin-left: 5%;
+            background: rgba(50,50,50,.7);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline;
+        }
+        .e-card p {
+            display: inline;
+            color: #202020;
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        /*********** Section 6 [f] *****************/
+        section.f {
+            height: 0;
+        }
+    </style>
+    <style>
+        /**************** Section 7 [g] ****************/
+        section.g {
+            height: 900px;
+        }
+        .g-background {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-image: url("res/IMG_0891.jpeg");
+            background-size: 100%;
+        }
+        .g-vert {
+            position: absolute;
+            top: 25%;
+            width: 100%;
+        }
+        .g-content {
+            width: 100%;
+            text-align: center;
+        }
+        .g-content h2 {
+            font-size: 350%;
+            text-shadow: 2px 0 5px grey;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <style>
+        /*************** Section 8 [h] ****************/
+        section.h {
+            height: 500px;
+        }
+        .h-background {
+            background: rgb(100,100,100);
+            width: 100%;
+            height: 100%;
+        }
+        .h-vert {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        .h-flex-split {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 100%;
+        }
+        .h-left, .h-right {
+            width: 50%;
+        }
+        .h-left {
+
+        }
+        .h-flex-row {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .h-row-item {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .h-contact {
+            width: 100%;
+            line-height: 2rem;
+            text-align: left;
+            margin: 20%;
+            font-size: 120%;
+        }
+        .h-contact h2 {
+            padding-bottom: 10px;
+        }
+        .h-contact a {
+            text-decoration: none;
+            font-size: 120%;
+        }
+        .h-row-item div br {
+            padding-bottom: 2em;
+        }
+        .h-row-background {
+            background-image: url("res/images.jfif");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://dbaues.dev" target="_blank">
+            <h2>dan<span>bauer</span></h2>
+        </a>
+    </header>
+    <section class="a">
+        <div class="a a-background">
+            <div class="a a-vert">
+                <div class="a">
+                    <div class="a a-flex-me-betch">
+                        <div class="a a-row-item a-flex-info">
+                            <div class="a a-flex-info">
+                                <h1 class="a">Join Scouting</h1>
+                                <p class="a">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus asperiores, cum delectus dolor dolores ducimus illum iure numquam quas, velitvoluptate? Corporis dignissimos illo labore laborum nulla saepe, vel?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="a a-row-item a-flex-form">
+                            <div class="a a-flex-form">
+                                <h3>Get in contact</h3>
+                                <div class="a">
+                                    <form method="post">
+                                        <div class="a-input a-input-name">
+                                            <label>
+                                                <input type="text" name="name" id="name" required placeholder="Enter your name">
+                                            </label>
+                                        </div>
+                                        <div class="a-input a-input-email">
+                                            <label>
+                                                <input type="email" name="email" id="email" required placeholder="Enter a valid email">
+                                            </label>
+                                        </div>
+                                        <div class="a-input a-submit">
+                                            <input class="a-hidden-control" type="submit">
+                                            <a href="#" class="a-submit-btn">Submit</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="b">
+        <div class="b b-background">
+            <div class="b b-vert">
+                <div class="b b-flex-row">
+                    <div class="b b-row-item">
+                        <div>
+                            <h2>Adventures</h2>
+                            <h1>01</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda et explicabo necessitatibus omnis placeat! Maxime.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="b b-row-item">
+                        <div>
+                            <h1>02</h1>
+                            <h2>Camping</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem earum eos maiores molestias vel.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="b b-row-item">
+                        <div>
+                            <h1>03</h1>
+                            <h2>Waterfront Activities</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolore eos inventore minus, optio perferendis sunt!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="c">
+            <div class="c c-background">
+                <div class="c c-vert">
+                    <div class="c c-flex-row">
+                        <div class="c c-row-item">
+                            <div class="c c-img-1"></div>
+                            <!--<img src="res/MVIMG_20190712_095320.jpg" alt="">-->
+                        </div>
+                        <div class="c c-row-item">
+                            <div class="c c-img-2"></div>
+                            <!--<img src="res/IMG_0665.JPEG" alt="">-->
+                        </div>
+                        <div class="c c-row-item">
+                            <div class="c c-img-3"></div>
+                            <!--<img src="res/IMG_20180615_130606.jpg" alt="">-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <section class="d">
+        <div class="d d-background">
+            <div class="d d-vert">
+                <div class="d d-content">
+                    <p>
+                        "I have over and over again explained that the purpose of the Boy Scout and Girl Guide Movement is to build men and women as citizens endowed with the three H's namely, Health, Happiness and Helpfulness. The man or woman who succeeds in developing these three attributes has secured the main steps to success this Life."
+                    </p>
+                    <div class="d d-author"><h3>Robert Baden-Powell</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="e">
+        <div class="e e-background">
+            <div class="e e-info">
+                <h3>Opportunities to endeavor</h3>
+            </div>
+            <div class="e e-vert">
+                <div class="e e-flex-row">
+                    <div class="e e-row-item">
+                        <div class="e e-img-1">
+                            <div class="e e-card">
+                                <h4>Sea Base</h4>
+                                <p> Florida</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="e e-row-item">
+                        <div class="e e-img-2">
+                            <div class="e e-card">
+                                <h4>Philmont</h4>
+                                <p>New Mexico</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="e e-row-item">
+                        <div class="e e-img-3">
+                            <div class="e e-card">
+                                <h4>Summit Bechtel</h4>
+                                <p>West Virginia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="e e-row-item">
+                        <div class="e e-img-4">
+                            <div class="e e-card">
+                                <h4>Norther Tier</h4>
+                                <p>Minnesota</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="f">
+
+    </section>
+    <section class="g">
+        <div class="g g-background">
+            <div class="g g-vert">
+                <div class="g g-content">
+                    <h2>Discover your scouting adventure!</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="h">
+        <div class="h h-background">
+            <div class="h h-vert">
+                <div class="h h-flex-split">
+                    <div class="h h-left">
+                        <div>
+                            <div class="h h-imgs">
+                                <!--<img> DB + Becki WoodBadge -->
+                                <!--<img> DB + Becki Eagle scout -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h h-right">
+                        <div class="h h-flex-row">
+                            <div class="h h-row-item">
+                                <div class="h h-contact">
+                                    <h2>Contact us</h2>
+                                    <a href="#">(507) 476 7576</a>
+                                    <br><br>
+                                    <h2>Troop near me</h2>
+                                    <a href="https://beascout.scouting.org/">scouting.org</a>
+                                    <br><br>
+                                    <h2>Support scouting</h2>
+                                    <a href="https://www.siouxcouncil.org/donate">siouxcouncil.org</a>
+                                </div>
+                            </div>
+                            <div class="h h-row-item">
+                                <div class="h-row-background"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <h2>daniel bauer</h2>
+        </div>
+        <div class="footer-img"></div>
+        <div>
+            <h2>&copy 2022</h2>
+        </div>
+    </footer>
+</body>
+</html>
