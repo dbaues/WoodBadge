@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/7e7e7d9138.js" crossorigin="anonymous"></script>
+
     <style>
         /************* General Doc Styles ****************/
         /*
@@ -28,7 +30,7 @@
             padding: 0;
             color: white;
         }
-        /******** DEBUG *** toggle -> *
+        /******** DEBUG *** toggle -> */
         div, section {
             outline: 2px solid red;
         }/**/
@@ -39,13 +41,16 @@
 
         /********** Header **********************/
         header {
-            padding: 20px;
-            height: 40px;
+            height: 80px;
             position: sticky;
             top: 0;
             left: 0;
             background: rgb(30,30,30);
             z-index: 11;
+        }
+        header div {
+            padding: 20px;
+            position: relative;
         }
         header a {
             text-decoration: none;
@@ -76,6 +81,14 @@
         }
         footer div {
             margin: 0 10px;
+        }
+
+        i {
+            display: inline;
+            color: white;
+            z-index: 50;
+            position: absolute;
+            right: 20px;
         }
     </style>
     <style>
@@ -216,7 +229,7 @@
     <style>
         /**************** Section 3 [c] *****************/
         section.c {
-            height: 400px;
+            height: 22vw;
         }
         .c {
             margin: 0;
@@ -259,7 +272,7 @@
         .c-img-3 {
             background-image: url("res/IMG_20180615_130606.jpg");
         }
-
+        /*  -> set to proportional
         @media only screen and (max-width: 1600px) {
             section.c { height: 350px; }
         }
@@ -275,6 +288,7 @@
         @media only screen and (max-width: 800px) {
             section.c { height: 150px; }
         }
+        */
     </style>
     <style>
         /**************** Section 4 [d] *******************/
@@ -307,6 +321,7 @@
             font-size: 110%;
             padding-right: 5%
         }
+
         @media only screen and (max-width: 1300px){
             section.d { height: 700px; }
         }
@@ -322,7 +337,7 @@
     <style>
         /************** Section 5 [e] *****************/
         section.e {
-            height: 350px;
+            height: 18vw;
         }
         .e-background {
             width: 100%;
@@ -405,7 +420,7 @@
     <style>
         /**************** Section 7 [g] ****************/
         section.g {
-            height: 900px;
+            height: 50vw;
         }
         .g-background {
             position: relative;
@@ -432,7 +447,7 @@
     <style>
         /*************** Section 8 [h] ****************/
         section.h {
-            height: 500px;
+            height: 18vw;
         }
         .h-background {
             background: rgb(100,100,100);
@@ -478,7 +493,7 @@
             line-height: 2rem;
             text-align: left;
             margin: 20%;
-            font-size: 120%;
+            font-size: 100%;
         }
         .h-contact h2 {
             padding-bottom: 10px;
@@ -491,21 +506,105 @@
             padding-bottom: 2em;
         }
         .h-row-background {
-            background-image: url("res/images.jfif");
+            background-image: url("res/IMG_20180612_195408.jpg");
             background-size: 100%;
             background-repeat: no-repeat;
             width: 100%;
             height: 100%;
             margin: 0;
         }
+        .h-img-1 {
+            background-image: url("res/IMG_2140.jpg");
+            background-size: 100%;
+        }
+        .h-img-2 {
+            background-size: 100%;
+            background-image: url("res/IMG_20190817_131548.jpg");
+        }
+    </style>
+    <style>
+        /*********** Side nav [i] **************/
+        nav.i {
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 20%;
+            z-index: 12;
+        }
+        nav {
+            transform: translateY(0px);
+        }
+        .i-background {
+            position: sticky;
+            height: 60em;
+            z-index: 30;
+            background: rgba(30,30,30,.8);
+        }
+        .i h3 {
+            margin: 10px;
+            color: rgb(130,130,130);
+        }
+        .i-ticket:hover {
+            border-radius: 10px;
+            border: 2px solid rgb(200,200,200);
+            padding: 18px;
+        }
+        #err {
+            visibility: hidden;
+            position: absolute;
+        }
+        @media only screen and (max-width: 500px){
+            section {
+                visibility: hidden;
+            }
+            #err {
+                position: relative;
+                padding: 25%;
+                visibility: visible;
+                color: black;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <div>
         <a href="https://dbaues.dev" target="_blank">
             <h2>dan<span>bauer</span></h2>
+
         </a>
+        <i class="fas fa-align-right fa-2x"></i>
+        <nav class="i">
+            <div class="i i-background">
+                <div class="i">
+                    <div class="i i-ticket i-item-1">
+                        <h2>Ticket Item 1</h2>
+                        <h3>Learn Web Development</h3>
+                    </div>
+                    <div class="i i-ticket i-item-2">
+                        <h2>Ticket Item 2</h2>
+                        <h3>Create this page</h3>
+                    </div>
+                    <div class="i i-ticket i-item-3">
+                        <h2>Ticket Item 3</h2>
+                        <h3>Create a computer safety presentation</h3>
+                    </div>
+                    <div class="i i-ticket i-item-4">
+                        <h2>Ticket Item 4</h2>
+                        <h3>Register as a merit badge Counselor</h3>
+                    </div>
+                    <div class="i i-ticket i-item-5">
+                        <h2>Ticket Item 5</h2>
+                        <h3>Prepare for internship and career</h3>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        </div>
     </header>
+    <p id="err">Mobile not supported yet</p>
     <section class="a">
         <div class="a a-background">
             <div class="a a-vert">
@@ -515,7 +614,7 @@
                             <div class="a a-flex-info">
                                 <h1 class="a">Join Scouting</h1>
                                 <p class="a">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus asperiores, cum delectus dolor dolores ducimus illum iure numquam quas, velitvoluptate? Corporis dignissimos illo labore laborum nulla saepe, vel?
+                                    Scouting is family, fun, friends and a lifetime of adventure! It’s the place where young people can grow to become their very best future selves.
                                 </p>
                             </div>
                         </div>
@@ -545,7 +644,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <section class="b">
@@ -675,11 +773,12 @@
             <div class="h h-vert">
                 <div class="h h-flex-split">
                     <div class="h h-left">
-                        <div>
-                            <div class="h h-imgs">
+                        <div class="h h-flex-row">
+                            <div class="h h-imgs h-row-item h-img-1">
                                 <!--<img> DB + Becki WoodBadge -->
                                 <!--<img> DB + Becki Eagle scout -->
                             </div>
+                            <div class="h h-imgs h-row-item h-img-2"></div>
                         </div>
                     </div>
                     <div class="h h-right">
@@ -705,6 +804,7 @@
             </div>
         </div>
     </section>
+
     <footer>
         <div>
             <h2>daniel bauer</h2>
