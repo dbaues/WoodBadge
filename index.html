@@ -9,9 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap" rel="stylesheet">
-
     <script src="https://kit.fontawesome.com/7e7e7d9138.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!-- v  Don't hate me for this v -->
     <style>
         /************* General Doc Styles ****************/
         /*
@@ -76,19 +77,43 @@
         .footer-img {
             background-image: url("res/22-222066_w-a-n-d-e-r-e-r.png");
             background-size: 100%;
-            width: 10%;
+            background-repeat: no-repeat;
+            width: 10em;
             height: 100%;
         }
         footer div {
             margin: 0 10px;
         }
-
-        i {
+        /************* MISC **************************/
+        #igloo {
             display: inline;
             color: white;
             z-index: 50;
             position: absolute;
             right: 20px;
+            top: 0;
+        }
+        .he-gone-he-back {
+            opacity: 0;
+            transition: all .5s ease-in-out;
+        }
+        #loader {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: #202020;
+            z-index: 7;
+        }
+        @keyframes loaded {
+            from { opacity: 100%; }
+            to   { opacity: 0; }
+        }
+        .load {
+            animation-name: loaded;
+            animation-duration: 3s;
+            opacity: 0;
         }
     </style>
     <style>
@@ -153,7 +178,7 @@
             padding: 5px 10px;
             margin: 10px 0;
         }
-        .a-input label input {
+        .a-input label input, #name, #email {
             height: 40px;
             width: 70%;
             text-align: right;
@@ -193,26 +218,32 @@
         }
         .b-vert {
             width: 95%;
+            height: 100%;
         }
         .b-flex-row {
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            align-items: center;
+            height: 100%;
         }
-        .b-row-item {
-            width: 200px;
+        .b-row-item{
+            width: 30%;
             flex: 1 1 0;
             position: relative;
             z-index: 3;
             padding-right: 15px;
             padding-left: 15px;
+            height: 100%;
+            display: flex;
+            align-items: center;
         }
         .b-row-item h1 {
             position: absolute;
             font-size: 1000%;
             font-family: 'Montserrat', sans-serif;
             right: 25%;
-            top: -75%;
+            top: 10%;
             color: #808080;
             z-index: -1;
         }
@@ -224,6 +255,36 @@
         .b-row-item p {
             text-align: center;
             font-size: 150%;
+        }
+        @media only screen and (max-width: 1200px) {
+            .b-row-item h2 {
+                font-size: 250%;
+            }
+            .b-row-item p {
+                font-size: 130%;
+            }
+        }
+        @media only screen and (max-width: 1000px) {
+            .b-row-item h2 {
+                font-size: 200%;
+            }
+            .b-row-item p {
+                font-size: 120%;
+            }
+        }
+        @media only screen and (max-width: 800px) {
+            .b-row-item h2 {
+                font-size: 125%;
+            }
+            .b-row-item p {
+                font-size: 80%;
+            }
+            section.b {
+                height: 300px;
+            }
+            .b-row-item h1 {
+                font-size: 700%;
+            }
         }
     </style>
     <style>
@@ -337,7 +398,7 @@
     <style>
         /************** Section 5 [e] *****************/
         section.e {
-            height: 18vw;
+            height: 16vw;
         }
         .e-background {
             width: 100%;
@@ -410,11 +471,67 @@
             color: #202020;
             font-weight: bold;
         }
+        @media only screen and (max-width: 1000px){
+            .e-card p {
+                visibility: hidden;
+            }
+            .e-card h4 {
+                padding: 5px;
+            }
+        }
     </style>
     <style>
         /*********** Section 6 [f] *****************/
         section.f {
-            height: 0;
+            height: 150px;
+            position: relative;
+        }
+        .f-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 5;
+            height: 100%;
+            background: #353535;
+        }
+        .f-flex {
+            width: 90%;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .f-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 200%;
+        }
+        .f-top {
+            text-align: left;
+        }
+        .f-bot {
+            text-align: right;
+        }
+        .f-law {
+            margin: 10px;
+            text-align: center;
+        }
+        .f-law h4{
+            color: #AAAAAA;
+        }
+        @media only screen and (max-width: 900px){
+            section.f {
+                height: 200px;
+            }
+            .f-content h2 {
+                font-size: 150%;
+            }
+        }
+        @media only screen and (max-width: 900px){
+            .f-content h2 {
+                font-size: 120%;
+            }
         }
     </style>
     <style>
@@ -442,6 +559,22 @@
             font-size: 350%;
             text-shadow: 2px 0 5px grey;
             font-family: 'Montserrat', sans-serif;
+        }
+        @media only screen and (max-width: 1000px){
+            .g-content h2 {
+                font-size: 250%;
+            }
+            .g-vert {
+                top: 15%;
+            }
+        }
+        @media only screen and (max-width: 700px){
+            .g-content h2 {
+                font-size: 200%;
+            }
+            .g-vert {
+                top: 10%;
+            }
         }
     </style>
     <style>
@@ -492,8 +625,14 @@
             width: 100%;
             line-height: 2rem;
             text-align: left;
-            margin: 20%;
+            margin: 15%;
             font-size: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .h-contact div {
+            margin: 10px;
         }
         .h-contact h2 {
             padding-bottom: 10px;
@@ -501,9 +640,6 @@
         .h-contact a {
             text-decoration: none;
             font-size: 120%;
-        }
-        .h-row-item div br {
-            padding-bottom: 2em;
         }
         .h-row-background {
             background-image: url("res/IMG_20180612_195408.jpg");
@@ -521,24 +657,61 @@
             background-size: 100%;
             background-image: url("res/IMG_20190817_131548.jpg");
         }
+        @media only screen and (max-width: 1750px){
+            .h-contact h2 {
+                font-size: 110%;
+                padding-bottom: 0;
+            }
+            .h-contact a {
+                font-size: 100%;
+            }
+        }
+        @media only screen and (max-width: 1325px){
+            .h-contact div {
+                margin: 0;
+            }
+        }
+        @media only screen and (max-width: 1000px){
+            .h-contact {
+                line-height: 1.5em;
+            }
+            .h-contact h2 {
+                font-size: 80%;
+            }
+            .h-contact a {
+                font-size: 80%;
+            }
+        }
+        @media only screen and (max-width: 1000px){
+            .h-contact {
+                line-height: 1em;
+                margin: 0 10%;
+            }
+            .h-contact h2 {
+                font-size: 70%;
+            }
+            .h-contact a {
+                font-size: 70%;
+            }
+        }
     </style>
     <style>
         /*********** Side nav [i] **************/
         nav.i {
-            visibility: hidden;
             position: absolute;
             top: 0;
             bottom: 0;
             right: 0;
-            width: 20%;
-            z-index: 12;
+            width: 30em;
+            z-index: -1;
+            padding-top: 80px;
         }
         nav {
-            transform: translateY(0px);
+            transform: translateY(0);
         }
         .i-background {
             position: sticky;
-            height: 60em;
+            height: 100vh;
             z-index: 30;
             background: rgba(30,30,30,.8);
         }
@@ -571,40 +744,42 @@
 <body>
     <header>
         <div>
-        <a href="https://dbaues.dev" target="_blank">
-            <h2>dan<span>bauer</span></h2>
-
-        </a>
-        <i class="fas fa-align-right fa-2x"></i>
-        <nav class="i">
-            <div class="i i-background">
-                <div class="i">
-                    <div class="i i-ticket i-item-1">
-                        <h2>Ticket Item 1</h2>
-                        <h3>Learn Web Development</h3>
-                    </div>
-                    <div class="i i-ticket i-item-2">
-                        <h2>Ticket Item 2</h2>
-                        <h3>Create this page</h3>
-                    </div>
-                    <div class="i i-ticket i-item-3">
-                        <h2>Ticket Item 3</h2>
-                        <h3>Create a computer safety presentation</h3>
-                    </div>
-                    <div class="i i-ticket i-item-4">
-                        <h2>Ticket Item 4</h2>
-                        <h3>Register as a merit badge Counselor</h3>
-                    </div>
-                    <div class="i i-ticket i-item-5">
-                        <h2>Ticket Item 5</h2>
-                        <h3>Prepare for internship and career</h3>
+            <a href="https://dbaues.dev" target="_blank">
+                <h2>dan<span>bauer</span></h2>
+            </a>
+            <div id="igloo" onclick="hereMyTickets()">
+                <i class="fas fa-align-right fa-2x" id="trigger"></i>
+            </div>
+            <nav class="i he-gone-he-back" id="items">
+                <div class="i i-background">
+                    <div class="i">
+                        <div class="i i-ticket i-item-1">
+                            <h2>Ticket Item 1</h2>
+                            <h3>Learn Web Development</h3>
+                        </div>
+                        <div class="i i-ticket i-item-2">
+                            <h2>Ticket Item 2</h2>
+                            <h3>Create this page</h3>
+                        </div>
+                        <div class="i i-ticket i-item-3">
+                            <h2>Ticket Item 3</h2>
+                            <h3>Create a computer safety presentation</h3>
+                        </div>
+                        <div class="i i-ticket i-item-4">
+                            <h2>Ticket Item 4</h2>
+                            <h3>Register as a merit badge Counselor</h3>
+                        </div>
+                        <div class="i i-ticket i-item-5">
+                            <h2>Ticket Item 5</h2>
+                            <h3>Prepare for internship and career</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
         </div>
     </header>
     <p id="err">Mobile not supported yet</p>
+    <div id="loader"></div>
     <section class="a">
         <div class="a a-background">
             <div class="a a-vert">
@@ -622,20 +797,18 @@
                             <div class="a a-flex-form">
                                 <h3>Get in contact</h3>
                                 <div class="a">
-                                    <form method="post">
+                                    <form method="post" id="info-form">
                                         <div class="a-input a-input-name">
-                                            <label>
-                                                <input type="text" name="name" id="name" required placeholder="Enter your name">
-                                            </label>
+                                            <label for="name" hidden></label>
+                                            <input type="text" name="name" id="name" required placeholder="Enter your name">
                                         </div>
                                         <div class="a-input a-input-email">
-                                            <label>
-                                                <input type="email" name="email" id="email" required placeholder="Enter a valid email">
-                                            </label>
+                                            <label for="email" hidden></label>
+                                            <input type="email" name="email" id="email" required placeholder="Enter a valid email">
                                         </div>
                                         <div class="a-input a-submit">
                                             <input class="a-hidden-control" type="submit">
-                                            <a href="#" class="a-submit-btn">Submit</a>
+                                            <a href="#" onclick="submitForm()" class="a-submit-btn">Submit</a>
                                         </div>
                                     </form>
                                 </div>
@@ -651,29 +824,29 @@
             <div class="b b-vert">
                 <div class="b b-flex-row">
                     <div class="b b-row-item">
+                        <h1>01</h1>
                         <div>
                             <h2>Adventures</h2>
-                            <h1>01</h1>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda et explicabo necessitatibus omnis placeat! Maxime.
+                                The great scouting adventure will take you many places you may have never considered. Expand your horizons.
                             </p>
                         </div>
                     </div>
                     <div class="b b-row-item">
+                        <h1>02</h1>
                         <div>
-                            <h1>02</h1>
                             <h2>Camping</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem earum eos maiores molestias vel.
+                                Learn many different and valuable outdoor skills while having fun with friends.
                             </p>
                         </div>
                     </div>
                     <div class="b b-row-item">
+                        <h1>03</h1>
                         <div>
-                            <h1>03</h1>
                             <h2>Waterfront Activities</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolore eos inventore minus, optio perferendis sunt!
+                                Have fun with the different outdoor activities such as many waterfront activities
                             </p>
                         </div>
                     </div>
@@ -757,7 +930,19 @@
         </div>
     </section>
     <section class="f">
-
+        <div class="f f-background">
+            <div class="f f-flex">
+                <div class="f f-content f-top">
+                    <h2>Building men and women of the future....</h2>
+                </div>
+                <div class="f f-content f-law">
+                    <h4>- Trustworthy - Loyal - Helpful - Friendly - Courteous - Kind - Obedient - Cheerful - Thrifty - Brave - Clean - Reverent -</h4>
+                </div>
+                <div class="f f-content f-bot">
+                    <h2>...Prepared for life.</h2>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="g">
         <div class="g g-background">
@@ -785,14 +970,18 @@
                         <div class="h h-flex-row">
                             <div class="h h-row-item">
                                 <div class="h h-contact">
-                                    <h2>Contact us</h2>
-                                    <a href="#">(507) 476 7576</a>
-                                    <br><br>
-                                    <h2>Troop near me</h2>
-                                    <a href="https://beascout.scouting.org/">scouting.org</a>
-                                    <br><br>
-                                    <h2>Support scouting</h2>
-                                    <a href="https://www.siouxcouncil.org/donate">siouxcouncil.org</a>
+                                    <div>
+                                        <h2>Contact us</h2>
+                                        <a href="#">(507) 476 7576</a>
+                                    </div>
+                                    <div>
+                                        <h2>Troop near me</h2>
+                                        <a href="https://beascout.scouting.org/">scouting.org</a>
+                                    </div>
+                                    <div>
+                                        <h2>Support scouting</h2>
+                                        <a href="https://www.siouxcouncil.org/donate">siouxcouncil.org</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="h h-row-item">
@@ -804,7 +993,6 @@
             </div>
         </div>
     </section>
-
     <footer>
         <div>
             <h2>daniel bauer</h2>
@@ -814,5 +1002,35 @@
             <h2>&copy 2022</h2>
         </div>
     </footer>
+    <script>
+        $('#trigger').on('click', function() {
+            let navbar = $('#items');
+            if (navbar.css('opacity') == 0) {
+                navbar.css('opacity', 1);
+                navbar.css('visibility', 'visible');
+            }
+            else {
+                navbar.css('visibility', 'hidden');
+                navbar.css('opacity', 0);
+            }
+        });
+
+        function hereMyTickets() {
+            return;
+        }
+
+        function submitForm() {
+            // Currently submits nowhere but can be changed if needed.
+            let nameField = document.getElementById('name').innerText;
+            let emailField = document.getElementById('email').innerText;
+
+            if (nameField.length <= 0 || emailField.length <= 0) {
+                document.getElementById('info-form').submit();
+            }
+        }
+
+        $('#loader').fadeOut(1750);
+        //document.getElementById('loader').classList.add('load');
+    </script>
 </body>
 </html>
